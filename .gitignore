@@ -1,2 +1,15 @@
-./node_modules
+node_modules
+
+#dist folder
+dist
+build
+
+# IDEA/Webstorm project files
+.idea
+*.iml
+
+#VSCode metadata
 .vscode
+
+# Mac files
+.DS_Store

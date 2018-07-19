@@ -7,15 +7,15 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+import Header from "../../components/Header/Header.js";
+import Footer from "../../components/Footer/Footer.js";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Button from "../../components/CustomButtons/Button.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
+import Parallax from "../../components/Parallax/Parallax.js";
 
-import landingPageStyle from "../../../material-kit-react/views/landingPage.js";
+import landingPageStyle from "../../assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
@@ -33,7 +33,7 @@ class LandingPage extends React.Component {
           color="transparent"
           routes={dashboardRoutes}
           brand="Material Kit React"
-          rightLinks={<HeaderLinks />}
+          // rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
             height: 400,

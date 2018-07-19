@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 // core components
-import Header from "../../../components/Header/Header.js";
-import Footer from "../../../components/Footer/Footer.js";
-import GridContainer from "../../../components/Grid/GridContainer.js";
-import GridItem from "../../../components/Grid/GridItem.js";
-import Button from "../../../components/CustomButtons/Button.js";
-import Parallax from "../../../components/Parallax/Parallax.js";
+import Header from "../../components/Header/Header.js";
+import Footer from "../../components/Footer/Footer.js";
+import GridContainer from "../../components/Grid/GridContainer.js";
+import GridItem from "../../components/Grid/GridItem.js";
+import Button from "../../components/CustomButtons/Button.js";
+import Parallax from "../../components/Parallax/Parallax.js";
 // sections for this page
-import HeaderLinks from "../../../components/Header/HeaderLinks.js";
+import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import SectionBasics from "./Sections/SectionBasics.js";
 import SectionNavbars from "./Sections/SectionNavbars.js";
 import SectionTabs from "./Sections/SectionTabs.js";
@@ -37,7 +37,7 @@ class Components extends React.Component {
       <div>
         <Header
           brand="Material Kit React"
-          rightLinks={<HeaderLinks />}
+          // rightLinks={<HeaderLinks />}
           fixed
           color="transparent"
           changeColorOnScroll={{
@@ -63,7 +63,7 @@ class Components extends React.Component {
 
         <div className={classNames(classes.main, classes.mainRaised)}>
           <SectionBasics />
-          <SectionNavbars />
+          {/* <SectionNavbars /> */}
           <SectionTabs />
           <SectionPills />
           <SectionNotifications />

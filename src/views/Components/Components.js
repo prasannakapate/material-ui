@@ -62,14 +62,14 @@ class Components extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <SectionBasics />
+          {/* <SectionBasics /> */}
           {/* <SectionNavbars /> */}
           <SectionTabs />
           <SectionPills />
-          <SectionNotifications />
-          <SectionTypography />
+          {/* <SectionNotifications />
+          <SectionTypography /> */}
           <SectionJavascript />
-          <SectionCarousel />
+          {/* <SectionCarousel /> */}
           <SectionCompletedExamples />
           <SectionLogin />
           <GridItem md={12} className={classes.textCenter}>

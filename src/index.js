@@ -5,7 +5,7 @@ import { Router, Route, Switch } from "react-router";
 import registerServiceWorker from './registerServiceWorker';
 import indexRoutes from "./routes";
 
-import "./assets/scss/material-kit-react.scss"
+import "./assets/scss/material-kit-react.css"
 
 var hist = createBrowserHistory();
 

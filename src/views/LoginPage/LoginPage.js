@@ -4,11 +4,11 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import InputAdornment from "@material-ui/core/InputAdornment";
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-import LockOutline from "@material-ui/icons/LockOutline";
+// import LockOutline from "@material-ui/icons/LockOutline";
 import People from "@material-ui/icons/People";
 // core components
 import Header from "../../components/Header/Header.js";
-import HeaderLinks from "../../components/Header/HeaderLinks.js";
+// import HeaderLinks from "../../components/Header/HeaderLinks.js";
 import Footer from "../../components/Footer/Footer.js";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
@@ -129,26 +129,19 @@ class LoginPage extends React.Component {
                         }}
                       />
                       <CustomInput
-                        labelText="Password"
+                        labelText="Feedback"
                         id="pass"
                         formControlProps={{
                           fullWidth: true
                         }}
                         inputProps={{
-                          type: "password",
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <LockOutline
-                                className={classes.inputIconsColor}
-                              />
-                            </InputAdornment>
-                          )
+                          type: "textField"
                         }}
                       />
                     </CardBody>
                     <CardFooter className={classes.cardFooter}>
                       <Button simple color="primary" size="lg">
-                        Get started
+                        Will surely get back to you.
                       </Button>
                     </CardFooter>
                   </form>

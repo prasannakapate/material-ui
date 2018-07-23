@@ -1,20 +1,22 @@
-import React from "react";
+import React from 'react';
 // nodejs library that concatenates classes
-import classNames from "classnames";
+import classNames from 'classnames';
 // nodejs library to set properties for components
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 // @material-ui/core components
-import withStyles from "@material-ui/core/styles/withStyles";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Hidden from "@material-ui/core/Hidden";
-import Drawer from "@material-ui/core/Drawer";
+import withStyles from '@material-ui/core/styles/withStyles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
+import { Link } from 'react-router-dom';
 // @material-ui/icons
-import Menu from "@material-ui/icons/Menu";
+import Menu from '@material-ui/icons/Menu';
 // core components
-import headerStyle from "../../assets/jss/material-kit-react/components/headerStyle.js";
+import headerStyle from '../../assets/jss/material-kit-react/components/headerStyle.js';
+import { List, ListItem } from '@material-ui/core';
 
 class Header extends React.Component {
   constructor(props) {
@@ -30,7 +32,7 @@ class Header extends React.Component {
   }
   componentDidMount() {
     if (this.props.changeColorOnScroll) {
-      window.addEventListener("scroll", this.headerColorChange);
+      window.addEventListener('scroll', this.headerColorChange);
     }
   }
   headerColorChange() {
@@ -38,23 +40,23 @@ class Header extends React.Component {
     const windowsScrollTop = window.pageYOffset;
     if (windowsScrollTop > changeColorOnScroll.height) {
       document.body
-        .getElementsByTagName("header")[0]
+        .getElementsByTagName('header')[0]
         .classList.remove(classes[color]);
       document.body
-        .getElementsByTagName("header")[0]
+        .getElementsByTagName('header')[0]
         .classList.add(classes[changeColorOnScroll.color]);
     } else {
       document.body
-        .getElementsByTagName("header")[0]
+        .getElementsByTagName('header')[0]
         .classList.add(classes[color]);
       document.body
-        .getElementsByTagName("header")[0]
+        .getElementsByTagName('header')[0]
         .classList.remove(classes[changeColorOnScroll.color]);
     }
   }
   componentWillUnmount() {
     if (this.props.changeColorOnScroll) {
-      window.removeEventListener("scroll", this.headerColorChange);
+      window.removeEventListener('scroll', this.headerColorChange);
     }
   }
   render() {
@@ -74,9 +76,9 @@ class Header extends React.Component {
       [classes.fixed]: fixed
     });
     const brandComponent = (
-      <Button className={classes.title}>
-        {brand}
-      </Button>
+      <Link to={'/'} className={classes.link}>
+        <Button className={classes.title}>{brand}</Button>
+      </Link>
     );
     return (
       <AppBar className={appBarClasses}>
@@ -92,14 +94,22 @@ class Header extends React.Component {
             )}
           </div>
           <Hidden smDown implementation="css">
-            {rightLinks}
+            <Link to={'/about-us'} className={classes.link}>
+              <Button color="primary" size="lg" simple>
+                About Us
+              </Button>
+            </Link>
+            <Link to={'/contact-us'} className={classes.link}>
+              <Button color="primary" size="lg" simple>
+                Contact Us
+              </Button>
+            </Link>
           </Hidden>
           <Hidden mdUp>
             <IconButton
               color="inherit"
               aria-label="open drawer"
-              onClick={this.handleDrawerToggle}
-            >
+              onClick={this.handleDrawerToggle}>
               <Menu />
             </IconButton>
           </Hidden>
@@ -107,16 +117,31 @@ class Header extends React.Component {
         <Hidden mdUp implementation="css">
           <Drawer
             variant="temporary"
-            anchor={"right"}
+            anchor={'right'}
             open={this.state.mobileOpen}
             classes={{
               paper: classes.drawerPaper
             }}
-            onClose={this.handleDrawerToggle}
-          >
+            onClose={this.handleDrawerToggle}>
             <div className={classes.appResponsive}>
               {leftLinks}
-              {rightLinks}
+              <Link to={'/'} className={classes.link}>
+                <Button color="primary" size="lg" simple>
+                  Home
+                </Button>
+              </Link>
+              <br />
+              <Link to={'/about-us'} className={classes.link}>
+                <Button color="primary" size="lg" simple>
+                  About Us
+                </Button>
+              </Link>
+              <br />
+              <Link to={'/contact-us'} className={classes.link}>
+                <Button color="primary" size="lg" simple>
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </Drawer>
         </Hidden>
@@ -126,21 +151,21 @@ class Header extends React.Component {
 }
 
 Header.defaultProp = {
-  color: "white"
+  color: 'white'
 };
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
   color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "transparent",
-    "white",
-    "rose",
-    "dark"
+    'primary',
+    'info',
+    'success',
+    'warning',
+    'danger',
+    'transparent',
+    'white',
+    'rose',
+    'dark'
   ]),
   rightLinks: PropTypes.node,
   leftLinks: PropTypes.node,
@@ -156,15 +181,15 @@ Header.propTypes = {
   changeColorOnScroll: PropTypes.shape({
     height: PropTypes.number.isRequired,
     color: PropTypes.oneOf([
-      "primary",
-      "info",
-      "success",
-      "warning",
-      "danger",
-      "transparent",
-      "white",
-      "rose",
-      "dark"
+      'primary',
+      'info',
+      'success',
+      'warning',
+      'danger',
+      'transparent',
+      'white',
+      'rose',
+      'dark'
     ]).isRequired
   })
 };
